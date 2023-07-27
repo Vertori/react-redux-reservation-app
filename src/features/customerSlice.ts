@@ -17,9 +17,13 @@ const initialStateValue: CustomerState = {
 export const customerSlice = createSlice({
   name: "customers",
   initialState: initialStateValue,
-  reducers: {},
+  reducers: {
+    addCustomer: (state, action: PayloadAction<Customer>) => {
+      state.value.push(action.payload);
+    },
+  },
 });
 
-export const {} = customerSlice.actions;
+export const { addCustomer } = customerSlice.actions;
 
 export default customerSlice.reducer;
